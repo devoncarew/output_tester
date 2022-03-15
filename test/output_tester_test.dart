@@ -10,12 +10,6 @@ void main() {
     expect(calculate(), 41);
   });
 
-  test('calculate.2', () async {
-    await Future.delayed(Duration(seconds: 1));
-
-    expect(calculate(), 41);
-  });
-
   group('group.a', () {
     test('calculate.3', () {
       expect(calculate(), 42);
@@ -26,6 +20,10 @@ void main() {
 
       expect(calculate(), 42);
     });
+  });
+
+  test('calculate.2', () async {
+    expect(calculate(), 41);
   });
 
   group('group.b', () {
@@ -46,5 +44,9 @@ void main() {
 
       expect(calculate(), 42);
     });
+  });
+
+  test('calculate.3', () async {
+    expect(calculate(), 41);
   });
 }
