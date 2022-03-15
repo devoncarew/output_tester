@@ -1,0 +1,22 @@
+name: Dart
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: google/dart:dev
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: dart pub get
+      - run: dart format --output=none --set-exit-if-changed .
+      - run: dart analyze
+      - run: dart test
+      - run: dart bin/output_tester.dart
