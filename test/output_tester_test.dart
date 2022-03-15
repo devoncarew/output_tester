@@ -6,12 +6,22 @@ void main() {
     expect(calculate(), 42);
   });
 
+  test('calculate.2', () async {
+    expect(calculate(), 41);
+  });
+
+  test('calculate.2', () async {
+    await Future.delayed(Duration(seconds: 1));
+
+    expect(calculate(), 41);
+  });
+
   group('group.a', () {
-    test('calculate.2', () {
+    test('calculate.3', () {
       expect(calculate(), 42);
     });
 
-    test('calculate.3', () async {
+    test('calculate.4', () async {
       await Future.delayed(Duration(seconds: 1));
 
       expect(calculate(), 42);
@@ -19,22 +29,22 @@ void main() {
   });
 
   group('group.b', () {
-    test('calculate.2', () async {
+    test('calculate.3', () async {
       await Future.delayed(Duration(seconds: 1));
 
       expect(calculate(), 42);
     });
 
-    test('calculate.3', () async {
+    test('calculate.4', () async {
       await Future.delayed(Duration(seconds: 2));
 
       expect(calculate(), 42);
     });
-  });
 
-  test('calculate.4', () async {
-    await Future.delayed(Duration(seconds: 1));
+    test('calculate.5', () async {
+      await Future.delayed(Duration(seconds: 2));
 
-    expect(calculate(), 36);
+      expect(calculate(), 42);
+    });
   });
 }
