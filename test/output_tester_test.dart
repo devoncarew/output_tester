@@ -26,10 +26,15 @@ void main() {
     });
 
     test('calculate.3', () async {
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(Duration(seconds: 2));
 
-      await Future.delayed(Duration(seconds: 1));
       expect(calculate(), 42);
     });
+  });
+
+  test('calculate.4', () async {
+    await Future.delayed(Duration(seconds: 1));
+
+    expect(calculate(), 36);
   });
 }
