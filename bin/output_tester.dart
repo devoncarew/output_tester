@@ -33,7 +33,7 @@ void main(List<String> arguments) {
   );
 
   print('');
-  print('::error::Test run had failures; 9 total tests, 3 failures.');
+  print('::error::Encountered test failures; 9 tests, 3 failures.');
 }
 
 void printTest({
