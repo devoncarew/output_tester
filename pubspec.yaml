@@ -6,6 +6,7 @@ environment:
   sdk: ">=2.15.0 <3.0.0"
 
 dependencies:
+  io: any
   path: ^1.8.0
 
 dev_dependencies:
