@@ -1,6 +1,7 @@
 //import 'package:io/ansi.dart';
 
 void main(List<String> arguments) {
+  print('Running tests...');
   print('');
 
   printTest(title: 'test/output_tester_test.dart: calculate.1');
@@ -33,14 +34,8 @@ void main(List<String> arguments) {
   );
 
   print('');
-  print('Testing complete: 9 tests, 3 failures.');
-  print('::error::Testing complete: 9 tests, 3 failures.');
-
-  print('');
-  print('::debug::This is a debug message');
-  print('This is an info message');
-  print('::warning::This is a warning');
-  print('::error::This is an error');
+  // print('Testing complete: 9 tests, 3 failures.');
+  print('::error:: 9 tests, 3 failures.');
 }
 
 void printTest({
@@ -51,7 +46,7 @@ void printTest({
   const startGroup = '::group::';
   const endGroup = '::endgroup::';
 
-  // ❌ ❎ ✅ 🛑 ⛔ ✖
+  // ❌ ❎ ✅ 🛑 ⛔ ✖ 💪 🤢 ⚠️ 🔴 🟢 ⚪ ☑️ ✔️
   if (passed) {
     print('$startGroup✅ $title');
   } else {
