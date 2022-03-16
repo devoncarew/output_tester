@@ -1,6 +1,8 @@
 import 'package:io/ansi.dart';
 
 void main(List<String> arguments) {
+  print('');
+
   printTest(title: 'test/output_tester_test.dart: calculate.1');
   printTest(
     title: 'test/output_tester_test.dart: calculate.2',
@@ -32,6 +34,11 @@ void main(List<String> arguments) {
 
   print('');
   print('9 tests, 3 failures.');
+
+  // print('');
+  // print('❌ ❎ ✅ 🛑 ⛔ ✖');
+  // print('');
+  // print(red.wrap('❎ ✅ ✖'));
 }
 
 void printTest({
@@ -41,9 +48,9 @@ void printTest({
 }) {
   final prefix = /* details == null ? '' :*/ '::group::';
 
-  // ❌ ❎ ✅ 🛑 ⛔
+  // ❌ ❎ ✅ 🛑 ⛔ ✖ ❎
   if (failure) {
-    print('$prefix🛑 ${red.wrap(title)}');
+    print('$prefix❌ ${red.wrap(title)}');
   } else {
     print('$prefix✅ $title');
   }
