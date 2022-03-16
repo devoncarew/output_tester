@@ -34,6 +34,13 @@ void main(List<String> arguments) {
 
   print('');
   print('Testing complete: 9 tests, 3 failures.');
+  print('::error::Testing complete: 9 tests, 3 failures.');
+
+  print('');
+  print('::debug::This is a debug message');
+  print('This is an info message');
+  print('::warning::This is a warning');
+  print('::error::This is an error');
 }
 
 void printTest({
@@ -48,7 +55,7 @@ void printTest({
   if (passed) {
     print('$startGroup✅ $title');
   } else {
-    print('$startGroup❎ $title (failed)');
+    print('$startGroup❌ $title (failed)');
   }
   print(details.trimRight());
   print(endGroup);
