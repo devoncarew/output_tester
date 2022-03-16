@@ -31,28 +31,25 @@ void main(List<String> arguments) {
   );
 
   print('');
-  print('❎ 9 tests run, ❌ 3 failures.');
+  print('9 tests, 3 failures.');
 }
 
 void printTest({
   required String title,
   bool failure = false,
-  String? details,
+  String details = '',
 }) {
-  // todo:
-  final prefix = details == null ? '' : '::group::';
+  final prefix = /* details == null ? '' :*/ '::group::';
 
   // ❌ ❎ ✅ 🛑 ⛔
   if (failure) {
-    print('$prefix❌ ${styleBold.wrap(title)}');
+    print('$prefix🛑 ${red.wrap(title)}');
   } else {
     print('$prefix✅ $title');
   }
 
-  if (details != null) {
-    print(details);
-    print('::endgroup::');
-  }
+  print(details.trimRight());
+  print('::endgroup::');
 }
 
 const String _stackTrace = '''
