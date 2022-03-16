@@ -1,7 +1,6 @@
 //import 'package:io/ansi.dart';
 
 void main(List<String> arguments) {
-  print('Running tests...');
   print('');
 
   printTest(title: 'test/output_tester_test.dart: calculate.1');
@@ -34,8 +33,7 @@ void main(List<String> arguments) {
   );
 
   print('');
-  // print('Testing complete: 9 tests, 3 failures.');
-  print('::error:: 9 tests, 3 failures.');
+  print('::error::Test run had failures; 9 total tests, 3 failures.');
 }
 
 void printTest({
@@ -65,7 +63,17 @@ const String _stackTrace = '''
   test/output_tester_test.dart 49:23  main.<fn>
 ''';
 
-const String _stdout = '''
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis dictum justo, vitae congue nisi suscipit eget. Mauris auctor dui urna, ut semper mauris aliquam a. Nullam gravida laoreet feugiat. Nulla vulputate metus vitae libero tempor, at egestas libero sodales. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Vivamus a arcu vel arcu imperdiet imperdiet. Proin pulvinar elit consectetur, dignissim erat eget, vulputate leo. Cras pharetra hendrerit mi, nec congue libero tincidunt nec. Pellentesque eu nisi ac enim imperdiet gravida eget et ligula. Praesent id sem ultricies, rutrum tortor quis, suscipit lectus. Suspendisse congue sed dolor quis imperdiet. Curabitur at augue tellus. Donec ligula sem, euismod sit amet sodales ac, semper cursus metus. Ut in erat facilisis, varius elit at, venenatis ante. Aliquam erat volutpat.
-
-Vestibulum lacinia neque a diam efficitur, non elementum ipsum iaculis. Etiam ut diam nec nisi semper semper. Donec vel nisi semper, auctor tortor eu, venenatis ipsum. Vestibulum nec ante suscipit, vulputate augue vel, dictum felis. Sed ut facilisis sapien. Vestibulum molestie est at ipsum posuere, dictum gravida orci ullamcorper. Sed ut ornare ipsum, id molestie purus. Praesent vitae nisi convallis, vulputate nulla eget, ornare leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras consequat est non nunc tempus pulvinar. Morbi aliquet, odio in pretium fermentum, ex erat consectetur est, id congue mi diam sed neque. Nulla volutpat est eu mi tempor, at tempor nibh auctor. In convallis laoreet diam, vel eleifend arcu venenatis vel. Curabitur et consequat nulla. Sed eu arcu leo. Proin tincidunt sed massa hendrerit venenatis.''';
+const String _stdout =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sagittis '
+    'dictum justo, vitae congue nisi suscipit eget. Mauris auctor dui urna, ut '
+    'semper mauris aliquam a. Nullam gravida laoreet feugiat. Nulla vulputate '
+    'metus vitae libero tempor, at egestas libero sodales. Pellentesque '
+    'habitant morbi tristique senectus et netus et malesuada fames ac turpis '
+    'egestas. Nulla facilisi. Vivamus a arcu vel arcu imperdiet imperdiet. '
+    'Proin pulvinar elit consectetur, dignissim erat eget, vulputate leo. Cras '
+    'pharetra hendrerit mi, nec congue libero tincidunt nec. Pellentesque eu '
+    'nisi ac enim imperdiet gravida eget et ligula. Praesent id sem ultricies, '
+    'rutrum tortor quis, suscipit lectus. Suspendisse congue sed dolor quis '
+    'imperdiet. Curabitur at augue tellus. Donec ligula sem, euismod sit amet '
+    'sodales ac, semper cursus metus. Ut in erat facilisis, varius elit at, '
+    'venenatis ante. Aliquam erat volutpat.';
