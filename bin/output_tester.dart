@@ -46,7 +46,7 @@ void printTest({
   bool failure = false,
   String details = '',
 }) {
-  final prefix = /* details == null ? '' :*/ '::group::';
+  final prefix = '::group::';
 
   // ❌ ❎ ✅ 🛑 ⛔ ✖ ❎
   if (failure) {
