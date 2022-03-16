@@ -1,4 +1,4 @@
-import 'package:io/ansi.dart';
+//import 'package:io/ansi.dart';
 
 void main(List<String> arguments) {
   print('');
@@ -6,7 +6,7 @@ void main(List<String> arguments) {
   printTest(title: 'test/output_tester_test.dart: calculate.1');
   printTest(
     title: 'test/output_tester_test.dart: calculate.2',
-    failure: true,
+    passed: false,
     details: _stackTrace,
   );
 
@@ -15,7 +15,7 @@ void main(List<String> arguments) {
 
   printTest(
     title: 'test/output_tester_test.dart: calculate.2-1',
-    failure: true,
+    passed: false,
     details: _stackTrace,
   );
 
@@ -28,40 +28,30 @@ void main(List<String> arguments) {
 
   printTest(
     title: 'test/output_tester_test.dart: calculate.3',
-    failure: true,
+    passed: false,
     details: _stackTrace,
   );
 
   print('');
-  print('9 tests, 3 failures.');
-
-  // print('');
-  // print('❌ ❎ ✅ 🛑 ⛔ ✖');
-  // print('');
-  // print(red.wrap('❎ ✅ ✖'));
+  print('Testing complete: 9 tests, 3 failures.');
 }
 
 void printTest({
   required String title,
-  bool failure = false,
+  bool passed = true,
   String details = '',
 }) {
-  final prefix = '::group::';
+  const startGroup = '::group::';
+  const endGroup = '::endgroup::';
 
-  // ❌ ❎ ✅ 🛑 ⛔ ✖ ❎
-  if (failure) {
-    print('$prefix❌ $title (failed)');
+  // ❌ ❎ ✅ 🛑 ⛔ ✖
+  if (passed) {
+    print('$startGroup✅ $title');
   } else {
-    print('${green.wrap('passed')} $prefix✅ $title');
+    print('$startGroup❎ $title (failed)');
   }
-
-  // print(red.wrap(title));
-  // print(styleBold.wrap(title));
-  // print(styleDim.wrap(title));
-  // print(backgroundLightRed.wrap(title));
-
   print(details.trimRight());
-  print('::endgroup::');
+  print(endGroup);
 }
 
 const String _stackTrace = '''
