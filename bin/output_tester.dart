@@ -50,15 +50,15 @@ void printTest({
 
   // ❌ ❎ ✅ 🛑 ⛔ ✖ ❎
   if (failure) {
-    print('$prefix❌ $title (${backgroundLightRed.wrap('foo bar')})');
+    print('$prefix❌ $title (failed)');
   } else {
-    print('$prefix✅ $title');
+    print('${green.wrap('passed')} $prefix✅ $title');
   }
 
-  print(red.wrap(title));
-  print(styleBold.wrap(title));
-  print(styleDim.wrap(title));
-  print(backgroundLightRed.wrap(title));
+  // print(red.wrap(title));
+  // print(styleBold.wrap(title));
+  // print(styleDim.wrap(title));
+  // print(backgroundLightRed.wrap(title));
 
   print(details.trimRight());
   print('::endgroup::');
