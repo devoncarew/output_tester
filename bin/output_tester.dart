@@ -32,12 +32,12 @@ void main(List<String> arguments) {
     details: _stackTrace,
   );
 
-  print('::error file=bin/output_tester.dart,line=35,col=2,endColumn=7::'
-      'Another failure.');
-  print('::error file=test/output_tester_test.dart,line=10,col=4,endColumn=10::'
-      'Test failure');
-  print('::warning file=lib/output_tester.dart,line=2,col=2,endColumn=5::'
-      'A warning - but a very, very long one.');
+  print('::error file=bin/output_tester.dart,line=35,title=My failure title::'
+      'Another failure message message.');
+  print('::error file=test/output_tester_test.dart,line=10::'
+      'Test failure message.');
+  print('::warning file=lib/output_tester.dart,line=2::'
+      'A warning - but a very, very long one message.');
 
   print('');
   print('::error::Encountered test failures; 9 tests, 3 failures.');
