@@ -62,8 +62,8 @@ void printTest({
 }
 
 const String _stackTrace1 = '''
-  Expected: <41>
-    Actual: <42>
+  Expected: 41
+  Actual  : 42
   
   package:test_api                    expect
   test/output_tester_test.dart 50:5   main.<fn>
@@ -71,20 +71,26 @@ const String _stackTrace1 = '''
 ''';
 
 const String _stackTrace2 = '''
-  Expected: <41>
-    Actual: <42>
+  Expected: '41'
+  Actual  : '42'
   
   package:test_api                    expect
-  https://github.com/devoncarew/output_tester/blob/main/bin/output_tester.dart#L4 50:5   main.<fn>
+  test/output_tester_test.dart 50:5   main.<fn>
+  test/output_tester_test.dart 50:5   main.<fn>
+  test/output_tester_test.dart 50:5   main.<fn>
   test/output_tester_test.dart 49:23  main.<fn>
 ''';
 
 const String _stackTrace3 = '''
-  ::error::Expected: <41>, Actual: <42>
+  Expected: 41
+  Actual:   42
   
   package:test_api                    expect
-  github.com/devoncarew/output_tester/blob/main/bin/output_tester.dart#L4 50:5   main.<fn>
-  https://github.com/devoncarew/output_tester/blob/6f8b3bef9c9ef4eb54b25e9ed2f80a2be8fd627d/test/output_tester_test.dart#L10 49:23  main.<fn>
+  test/output_tester_test.dart 50:5   main.<fn>
+  test/output_tester_test.dart 49:23  main.<fn>
+  test/output_tester_test.dart 49:23  main.<fn>
+  test/output_tester_test.dart 49:23  main.<fn>
+  test/output_tester_test.dart 49:23  main.<fn>
 ''';
 
 const String _stdout =
