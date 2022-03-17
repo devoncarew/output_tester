@@ -7,7 +7,7 @@ void main(List<String> arguments) {
   printTest(
     title: 'test/output_tester_test.dart: calculate.2',
     passed: false,
-    details: _stackTrace,
+    details: _stackTrace1,
   );
 
   printTest(title: 'test/output_tester_test.dart: group.a calculate.3');
@@ -16,7 +16,7 @@ void main(List<String> arguments) {
   printTest(
     title: 'test/output_tester_test.dart: calculate.2-1',
     passed: false,
-    details: _stackTrace,
+    details: _stackTrace2,
   );
 
   printTest(title: 'test/output_tester_test.dart: group.b calculate.3');
@@ -29,15 +29,15 @@ void main(List<String> arguments) {
   printTest(
     title: 'test/output_tester_test.dart: calculate.3',
     passed: false,
-    details: _stackTrace,
+    details: _stackTrace3,
   );
 
-  print('::error file=bin/output_tester.dart,line=35,title=My failure title::'
-      'Another failure message message.');
-  print('::error file=test/output_tester_test.dart,line=10::'
-      'Test failure message.');
-  print('::warning file=lib/output_tester.dart,line=2::'
-      'A warning - but a very, very long one message.');
+  // print('::error file=bin/output_tester.dart,line=35,title=My failure title::'
+  //     'Another failure message message.');
+  // print('::error file=test/output_tester_test.dart,line=10::'
+  //     'Test failure message.');
+  // print('::warning file=lib/output_tester.dart,line=2::'
+  //     'A warning - but a very, very long one message.');
 
   print('');
   print('::error::Encountered test failures; 9 tests, 3 failures.');
@@ -61,13 +61,30 @@ void printTest({
   print(endGroup);
 }
 
-const String _stackTrace = '''
+const String _stackTrace1 = '''
   Expected: <41>
     Actual: <42>
   
   package:test_api                    expect
   test/output_tester_test.dart 50:5   main.<fn>
   test/output_tester_test.dart 49:23  main.<fn>
+''';
+
+const String _stackTrace2 = '''
+  Expected: <41>
+    Actual: <42>
+  
+  package:test_api                    expect
+  https://github.com/devoncarew/output_tester/blob/main/bin/output_tester.dart#L4 50:5   main.<fn>
+  test/output_tester_test.dart 49:23  main.<fn>
+''';
+
+const String _stackTrace3 = '''
+  ::error::Expected: <41>, Actual: <42>
+  
+  package:test_api                    expect
+  github.com/devoncarew/output_tester/blob/main/bin/output_tester.dart#L4 50:5   main.<fn>
+  https://github.com/devoncarew/output_tester/blob/6f8b3bef9c9ef4eb54b25e9ed2f80a2be8fd627d/test/output_tester_test.dart#L10 49:23  main.<fn>
 ''';
 
 const String _stdout =
